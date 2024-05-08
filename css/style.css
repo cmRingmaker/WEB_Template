@@ -1,0 +1,73 @@
+/* ==================================================================
+    - - - - - - - - - - [ GLOBALS ]
+   ==================================================================
+    [1] Size hack to set default font size to "10px" to make 1rem
+        the equivelent of 10px. (2.4rem = 24px, 0.8rem = 8px, etc)
+   ================================================================== */
+
+:root {
+  font-size: 62.5%; /* [1] */
+
+  /* ------------> DEFAULT DARK MODE COLORS!!!, CHANGE COLORS & DELETE THIS COMMENT LINE!!! <------------ */
+  /* Main colors */
+  --COLOR_BG: hsl(0, 5%, 10%);
+  --COLOR_PRIMARY: hsl(220, 90%, 15%);
+  --COLOR_SECONDARY: hsl(303, 71%, 73%);
+
+  /* Text */
+  --FONT_COLOR: hsl(30, 100%, 98%);
+}
+
+
+/* ==================================================================
+    - - - - - - - - - - [ BASE STYLES ]
+   ==================================================================
+    - - [ body, fonts, text elements, media elements ]
+    * Styles that are shared across the entire site
+   ================================================================== */
+
+body {
+  font-size: 1.8rem;
+  background-color: var(--COLOR_BG);
+  color: var(--FONT_COLOR);
+  height: 100vh;
+}
+
+::selection {
+  background-color: var(--COLOR_SECONDARY);
+  color: var(--COLOR_BG);
+}
+
+
+/* ==================================================================
+    - - - - - - - - - - [ HEADER ]
+   ==================================================================
+    * Typically a header has branding and a site nav
+   ================================================================== */
+  
+header {
+  background-color: var(--COLOR_PRIMARY);
+}
+
+
+/* ==================================================================
+    - - - - - - - - - - [ %CONTENT ]
+   ==================================================================
+    - - [ main, section, div, article, aside, form ]
+    * replace %CONTENT with one of the above when pasting this
+   ================================================================== */
+
+main {
+
+}
+
+
+/* ==================================================================
+    - - - - - - - - - - [ FOOTER ]
+   ==================================================================
+    * Typically a footer has branding and important site information
+   ================================================================== */
+
+footer {
+  background-color: var(--COLOR_PRIMARY);
+}
