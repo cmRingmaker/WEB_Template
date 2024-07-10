@@ -1,16 +1,10 @@
 # Theme Toggle
 
-The intended usage of this template is to utilize light-dark() in our CSS.
+The intended usage of this template is to utilize light-dark() in CSS as well as using an SVG toggle button to change colors of the theme.
 
-It is a simple checkbox that will toggle between color-schemes in our CSS.
-Default is
-color-scheme: light dark
+theme.js does the primary heavy lifting when toggling between themes and saving states for returning visits.
 
-Then we load our theme-toggle.js which adds a change event listener to the checkbox input. Checkbox state is saved in localstorage.
-Checked = true will set our theme to light mode
-Checked = false will set our theme to dark mode
-
-This template includes HTML, CSS, and JS that serve several functions.
+This template includes HTML, CSS, and JS that serve one purpose: to toggle theme modes.
 ---
 
 ## HTML
