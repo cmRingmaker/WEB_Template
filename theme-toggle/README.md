@@ -17,12 +17,12 @@ DIV that holds the following:
 **INPUT [checkbox]**
 - A checkbox that controls the state of the theme, Dark or Light, as well as the SVGs in the toggle.
 - True = Light Mode | False = Dark Mode
-- (see JS) Checkbox state will be saved in Local Storage of the browser.
-- (see JS) If users first visit, use their system settings to determine theme choice.
+- [(see JS)](#javascript) Checkbox state will be saved in Local Storage of the browser.
+- [(see JS)](#javascript) If users first visit, use their system settings to determine theme choice.
 
 **LABEL [for checkbox]**
 - Contains an SVG with multiple elements for a toggle button, including a mask.
-- (see JS) Changes SVG based on theme state.
+- [(see JS)](#javascript) Changes SVG based on theme state.
 ---
 
 ## CSS
@@ -33,7 +33,7 @@ Within the :root, a color-scheme is set to light dark to utilize CSS's light-dar
 - color-scheme is set to light dark to utilize CSS's light-dark() to handle multiple theme colors.
 - Using variables to define colors and then using light-dark() to use the already defined variables makes sure you only need to edit in one place to affect everything.
   color-scheme changes:
-- (see JS) On first visit, checkbox is set to indeterminate - neither true or false. This allows for initial load to respect system settings.
+- [(see JS)](#javascript) On first visit, checkbox is set to indeterminate - neither true or false. This allows for initial load to respect system settings.
 - If checkbox is false and not set to indeterminate, set to light theme.
 - If checkbox is true, set to dark theme.
 
