@@ -1,0 +1,18 @@
+<div id="theme">
+  <span id='theme-text'>Theme Mode</span>
+  <input type="checkbox" id='theme-toggle'>
+  <label for="theme-toggle" aria-label='theme-toggle'>
+
+    <svg viewBox="0 0 48 48" width='26' height='26'>
+      <defs>
+        <mask id="circle-mask">
+          <circle cx="24" cy="24" r="22" fill="white" />
+        </mask>
+      </defs>
+      <!-- Stroke -->
+      <circle class='toggle-stroke' cx="24" cy="24" r="22" />
+      <circle class='toggle-circle toggle-unchecked' cy="24" r="24" mask="url(#circle-mask)" />
+      <circle class='toggle-circle toggle-checked' cy="24" r="24" mask="url(#circle-mask)" />
+    </svg>
+  </label>
+</div>

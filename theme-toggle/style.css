@@ -1,0 +1,66 @@
+:root {
+	color-scheme: light dark;
+
+	/* Dark Mode Colors */
+	--bg_dark: hsl(0, 5%, 10%);
+
+	/* Light Mode Colors */
+	--bg_light: hsl(45, 40%, 94%);
+
+	/* Main colors */
+	--COLOR_BG: light-dark(var(--bg_light), var(--bg_dark));
+
+	/* Text */
+	--FONT_COLOR: light-dark(var(--bg_dark), var(--bg_light));
+
+	&:has(#theme-toggle:not(:checked):not(:indeterminate)) {
+		color-scheme: light;
+	}
+
+	&:has(#theme-toggle:checked) {
+		color-scheme: dark;
+	}
+}
+
+#theme {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px 12px 0 0;
+	gap: 10px;
+
+	input {
+		display: none;
+	}
+
+	span {
+		user-select: none;
+		opacity: 0;
+		transform: translateX(0px);
+		transition: 250ms ease;
+	}
+
+	span:has(~ label:hover) {
+		color: var(--FONT_COLOR);
+		opacity: 100;
+		transform: translateX(-20px);
+	}
+
+	label[for='theme-toggle'] {
+		display: flex;
+		cursor: pointer;
+	}
+
+	svg {
+		.toggle-stroke {
+			stroke: var(--FONT_COLOR);
+			stroke-width: 4;
+			fill: none;
+		}
+
+		.toggle-circle {
+			transition: 0.4s ease;
+			fill: var(--FONT_COLOR);
+		}
+	}
+}
