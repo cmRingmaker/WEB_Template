@@ -1,10 +1,20 @@
 # Theme Toggle
+A lightweight, customizable theme toggle implementation for web projects. This template provides an easy way to switch between light and dark themes while respecting user preferences and system settings.
 
-The intended usage of this template is to utilize light-dark() in CSS as well as using an SVG toggle button to change colors of the theme.
+## Features
+- Smooth transition between light and dark themes
+- Respects user's system preferences on first visit
+- Saves user's theme preference for future visits
+- Custom SVG toggle button with animations
+- Utilizes CSS `light-dark()` function for efficient theme switching
 
-theme.js does the primary heavy lifting when toggling between themes and saving states for returning visits.
+## Usage
+- Implement `<div id="theme">` into the `<body>` of your HTML
+- In your CSS, within the `:root` set `color-scheme` (mandatory for the rest to work), and utilize `light-dark()` to set colors.
+- Implement `#theme` within your CSS, it is nested so you do not have to worry about stray unneccesary code.
+- Either copy this `theme.js` file and link it in your main js file, or simply implement it within your main file.
 
-This template includes HTML, CSS, and JS that serve one purpose: to toggle theme modes.
+## Components
 ---
 
 ## HTML
@@ -14,9 +24,10 @@ DIV that holds the following:
 
 - When the toggle is hovered, the span is animated in and tells which theme mode the user will be switching to.
 
-**INPUT [checkbox]**
+**INPUT** `checkbox`
 - A checkbox that controls the state of the theme, Dark or Light, as well as the SVGs in the toggle.
-- True = Light Mode | False = Dark Mode
+- `True` sets Light Mode
+- `False` set Dark Mode
 - [(see JS)](#javascript) Checkbox state will be saved in Local Storage of the browser.
 - [(see JS)](#javascript) If users first visit, use their system settings to determine theme choice.
 
@@ -27,15 +38,14 @@ DIV that holds the following:
 
 ## CSS
 
-Within the :root, a color-scheme is set to light dark to utilize CSS's light-dark()
-
 **:root**
-- color-scheme is set to light dark to utilize CSS's light-dark() to handle multiple theme colors.
-- Using variables to define colors and then using light-dark() to use the already defined variables makes sure you only need to edit in one place to affect everything.
-  color-scheme changes:
-- [(see JS)](#javascript) On first visit, checkbox is set to indeterminate - neither true or false. This allows for initial load to respect system settings.
-- If checkbox is false and not set to indeterminate, set to light theme.
-- If checkbox is true, set to dark theme.
+- `color-scheme` is set to `light dark` to utilize CSS's `light-dark()` to handle multiple theme colors.
+- Using variables to define colors and then using `light-dark()` to use the already defined variables makes sure you only need to edit in one place to affect everything.
+
+**color-scheme**
+- [(see JS)](#javascript) On first visit, checkbox is set to `indeterminate` - neither true or false. This allows for initial load to respect system settings.
+- If checkbox is `false` and not set to `indeterminate`, set to light theme.
+- If checkbox is `true`, set to dark theme.
 
 **THEME**
 - Utilizing CSS nesting, everything within theme is contained so caring about specificity of selectors isn't as mandatory.
@@ -51,14 +61,14 @@ Within the :root, a color-scheme is set to light dark to utilize CSS's light-dar
 - Assuming the user has a theme chosen already, load page with that theme every visit.
 - If first initial visit, set checkbox to indeterminate.
 
-**updateTogglePositions()**
+**`updateTogglePositions()`**
 - Depending checkbox state, set SVGs to their appropriate appearance using cx.
 
-**setTheme(theme)**
+**`setTheme(theme)`**
 - Checkbox is set to whichever value is in localstorage.
 - Change SPAN text depending on checkbox.
 
-**if(!savedTheme)**
+**`if(!savedTheme)`**
 - Runs only on first page load.
-- setTimeout is used to delay getting the RGB value of background until initial page is loaded.
-- getLightness function is to check the current preceived lightness of the RGB value of the background-color, if it's closer to black, set theme to dark. If it's closer to white, set theme to light.
+- `setTimeout` is used to delay getting the RGB value of background until initial page is loaded.
+- `getLightness` function is to check the current preceived lightness of the RGB value of the `background-color`, if it's closer to black, set theme to dark. If it's closer to white, set theme to light.
