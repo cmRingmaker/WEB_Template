@@ -44,8 +44,8 @@ DIV that holds the following:
 
 **color-scheme**
 - [(see JS)](#javascript) On first visit, checkbox is set to `indeterminate` - neither true or false. This allows for initial load to respect system settings.
-- If checkbox is `false` and not set to `indeterminate`, set to light theme.
-- If checkbox is `true`, set to dark theme.
+- If checkbox is `True` and not set to `indeterminate`, set to Light Theme.
+- If checkbox is `False`, set to Dark Theme.
 
 **THEME**
 - Utilizing CSS nesting, everything within theme is contained so caring about specificity of selectors isn't as mandatory.
