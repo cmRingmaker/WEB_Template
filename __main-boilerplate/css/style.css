@@ -9,15 +9,15 @@
 */
 
 :root {
-	font-size: 62.5%; /* [1a] */
+  font-size: 62.5%; /* [1a] */
 
-	/* Main colors */
-	--COLOR_BG: hsl(0, 5%, 10%);
-	--COLOR_PRIMARY: hsl(220, 90%, 15%);
-	--COLOR_SECONDARY: hsl(303, 71%, 73%);
+  /* Main colors */
+  --COLOR_BG: hsl(0, 5%, 10%);
+  --COLOR_PRIMARY: hsl(220, 90%, 15%);
+  --COLOR_SECONDARY: hsl(303, 71%, 73%);
 
-	/* Text */
-	--FONT_COLOR: hsl(30, 100%, 98%);
+  /* Text */
+  --FONT_COLOR: hsl(30, 100%, 98%);
 }
 
 /* 
@@ -27,15 +27,15 @@
 */
 
 body {
-	font-size: 1.8rem;
-	background-color: var(--COLOR_BG);
-	color: var(--FONT_COLOR);
-	height: 100vh;
+  font-size: 1.8rem;
+  background-color: var(--COLOR_BG);
+  color: var(--FONT_COLOR);
+  height: 100vh;
 }
 
 ::selection {
-	background-color: var(--COLOR_SECONDARY);
-	color: var(--COLOR_BG);
+  background-color: var(--COLOR_SECONDARY);
+  color: var(--COLOR_BG);
 }
 
 /* 
@@ -45,7 +45,7 @@ body {
 */
 
 header {
-	background-color: var(--COLOR_PRIMARY);
+  background-color: var(--COLOR_PRIMARY);
 }
 
 /*
@@ -64,5 +64,5 @@ main {
 */
 
 footer {
-	background-color: var(--COLOR_PRIMARY);
+  background-color: var(--COLOR_PRIMARY);
 }

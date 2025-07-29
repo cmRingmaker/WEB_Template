@@ -1,42 +1,49 @@
 /* Base clean slate */
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	box-sizing: border-box;
-	font: inherit;
-	vertical-align: baseline;
-	list-style: none;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  list-style: none;
 }
-
-/* Make images easier to work with */
-img,
-picture {
-	font-style: italic; /* Visually offset alt text to differentiate from surrounding text  */
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle; /* Remove phantom whitespace */
-}
-
-/* Some reset rules based on piccalil css reset */
-/* https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* https://web.archive.org/web/20240429233755/https://piccalil.li/blog/a-more-modern-css-reset/ */
 
 /* Prevent font size inflation */
 html {
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
-	line-height: 1.5;
+  min-height: 100vh;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  /* System font fallback */
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  font-style: italic; /* Visually offset alt text */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Set shorter line heights on headings and interactive elements */
-/* Worth it to change if fonts have large ascenders and descenders */
 h1,
 h2,
 h3,
@@ -44,21 +51,24 @@ h4,
 button,
 input,
 label {
-	line-height: 1.1;
+  line-height: 1.2;
 }
 
 /* Balance text wrapping on headings */
 h1,
 h2,
 h3,
-h4 {
-	text-wrap: balance;
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-weight: 600;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-	text-decoration-skip-ink: auto;
-	color: currentColor;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -66,11 +76,35 @@ input,
 button,
 textarea,
 select {
-	font-family: inherit;
-	font-size: inherit;
+  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
-	min-height: 10em;
+  min-height: 10em;
+}
+
+/* Only show outline for keyboard users */
+:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
